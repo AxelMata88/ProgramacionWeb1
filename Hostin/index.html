@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Alumnos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Alumnos</h1>
+
+    <!-- Mensaje de éxito -->
+    <?php if(isset($_GET['status']) && $_GET['status'] == 'success'): ?>
+      <p style="color:green;">Alumno registrado correctamente.</p>
+    <?php endif; ?>
+
+    <form action="guardar.php" method="post">
+      <label for="name">Nombre completo:</label>
+      <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" required>
+
+      <label for="matricula">Matrícula:</label>
+      <input type="text" id="matricula" name="matricula" placeholder="Ej. 2025001" required>
+
+      <label for="carrera">Carrera:</label>
+      <input type="text" id="carrera" name="carrera" placeholder="Ej. Ingeniería en Sistemas" required>
+
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+</body>
+</html>
